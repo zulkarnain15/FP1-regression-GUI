@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>H8 Model Deployment</title>
+    </head>
+    <body>
+
+        <div class="form">
+            <h1>Hacktive Student Placement Classifier</h1>
+
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type="text" name="hour" placeholder="Hour" required="required"/>
+                <input type="text" name="distance" placeholder="Distance" required="required"/>
+                <input type="text" name="surge" placeholder="Surge Multiplayer" required="required"/>
+                <select name="types">
+                    <option value="0">Uber</option>
+                    <option value="1">Lyft</option>
+                </select>
+                <select name="ride">
+                    <option value="0">UberX</option>
+                    <option value="1">UberXL</option>
+                    <option value="2">Black</option>
+                    <option value="3">BlackSUV</option>
+                    <option value="4">WAV</option>
+                    <option value="5">UberPool</option>
+                    <option value="6">Taxi</option>
+                    <option value="7">Shared</option>
+                    <option value="8">Lyft</option>
+                    <option value="9">LyftXL</option>
+                    <option value="10">Lux</option>
+                    <option value="11">LuxBlack</option>
+                    <option value="12">LuxBlackXL</option>
+                </select>
+                
+               
+                <button type="submit" >Predict</button>
+            </form>
+            <p class="message">{{ prediction_text }}</p>
+        </div>
+    </body>
+</html>
