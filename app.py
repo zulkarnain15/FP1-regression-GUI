@@ -50,10 +50,8 @@ def predict():
             val.append(0.0)
 
     prediction = model.predict([val])
-
     output = round(prediction[0], 2)
-
-    return render_template('main.html', prediction_text='Employee Salary should be $ {}'.format(output))
-
+    return render_template("predict.html", prediction=output)
+    
 if __name__ == "__main__":
     app.run(debug=True)
